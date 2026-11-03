@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mol Kampı — 10. Sınıf Kimya · Mol Kavramı Sınav Hazırlık</title>
+<meta name="description" content="10. sınıf kimya mol kavramı sınav hazırlığı: kütle-mol-tanecik üçgeni, NK gaz hacmi, denkleştirme, stokiyometri, karışım soruları, interaktif mol hesaplayıcı ve 13 soruluk test.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Manrope:wght@400;500;600;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+
+<header class="topbar">
+  <a class="brand" href="#hero"><span class="brand-mark">n</span><span>Mol&nbsp;Kampı</span><span class="brand-tag">10. sınıf kimya</span></a>
+  <nav class="topnav" id="topnav" aria-label="Konu menüsü">
+    <a href="#mol-nedir">Mol Nedir</a>
+    <a href="#ucgen">Hesap Üçgeni</a>
+    <a href="#gazlar">Gazlar</a>
+    <a href="#denklem">Denkleştirme</a>
+    <a href="#stokiyometri">Stokiyometri</a>
+    <a href="#karisim">Karışımlar</a>
+    <a href="#hesaplayici">Hesaplayıcı</a>
+    <a href="#test">Test</a>
+  </nav>
+  <button class="theme-btn" id="themeBtn" type="button" aria-label="Tema değiştir">◐</button>
+</header>
+
+<main>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="hero">
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <p class="kicker">2026–2027 Maarif Modeli · Kimyasal Tepkimeler · KİM.10.1.4 — 10.1.7</p>
+      <h1>Mol, kimyanın<br>sınavdaki <em>ana para birimi.</em></h1>
+      <p class="lede">Kütle, tanecik sayısı ve gaz hacmi birbirine mol üzerinden bağlanır. Bu sayfada tanımdan stokiyometriye kadar her kavram çözümlü örnekle, tuzaklarıyla ve formül özetiyle var; sonunda hesaplayıcı ve gerçek sınav tipli test seni bekliyor.</p>
+      <div class="hero-cta">
+        <a class="btn btn-solid" href="#mol-nedir">Baştan başla</a>
+        <a class="btn btn-ghost" href="#test">Direkt teste atla</a>
+      </div>
+    </div>
+    <div class="hero-stats" role="list">
+      <article class="stat" role="listitem">
+        <p class="stat-num">6,02×10<sup>23</sup></p>
+        <p class="stat-label">Avogadro sayısı — 1 moldeki tanecik sayısı</p>
+      </article>
+      <article class="stat" role="listitem">
+        <p class="stat-num">22,4 L</p>
+        <p class="stat-label">Normal koşullarda (0 °C, 1 atm) 1 mol gazın hacmi</p>
+      </article>
+      <article class="stat" role="listitem">
+        <p class="stat-num">3 yol</p>
+        <p class="stat-label">Kütle ↔ mol ↔ tanecik: hepsi tek eşitlik üzerinden geçer</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 01 MOL NEDİR ================= -->
+<section class="section" id="mol-nedir">
+  <header class="sec-head">
+    <span class="sec-num">01</span>
+    <h2>Mol nedir, neden var?</h2>
+    <p class="sec-lede">Atomlar ve moleküller tek tek sayılamayacak kadar küçük. Kimyacı bu yüzden "miktarı" gram yerine mol ile konuşur: mol, kütle ile tanecik sayısı arasındaki köprüdür.</p>
+  </header>
+
+  <div class="def-card">
+    <p class="def-tag">Molün resmî tanımı · kazanım kodu: KİM.10.1.4</p>
+    <p class="def-main">1 mol; <strong>12 gram karbon-12 (<sup>12</sup>C)</strong> izotopunun içindeki atom sayısı kadar tanecik (atom, molekül, iyon) içeren madde miktarıdır — yani <strong>6,02×10<sup>23</sup> tane tanecik</strong>.</p>
+    <p class="def-note">Madde miktarının simgesi <code>n</code>'dir; birimi SI'da küçük harfle yazılan <code>mol</code>. Sınavda "n mol" ifadesi gördüğünde aklına direkt bu köprü gelsin.</p>
+  </div>
+
+  <div class="cols-2">
+    <div class="col">
+      <h3>Neden mol?</h3>
+      <ul class="tick-list">
+        <li><b>Sayamadığın şeyi tartarsın:</b> 18 g suyu terazide tartabilirsin ama içindeki 6,02×10<sup>23</sup> molekülü tek tek sayamazsın.</li>
+        <li><b>Ortak bir "tane" gerekiyor:</b> tepkimelerde tanecikler belli oranlarda birleşiyor; miktarları birbiriyle kıyaslamak için herkese dilli bir birim lazım.</li>
+        <li><b>Mol tam bu iş için var:</b> mol sayısını bilince kütle, tanecik sayısı ve (gazsa) hacim anında hesaplanır.</li>
+      </ul>
+    </div>
+    <div class="col">
+      <h3>Tanecik türüne dikkat!</h3>
+      <p>1 mol her zaman <b>aynı sayıda tanecik</b> içerir; ama "tanecik" nedir, maddeye göre değişir:</p>
+      <ul class="tick-list">
+        <li><b>Metal / soygaz:</b> tanecik = atom → 1 mol Fe = 6,02×10<sup>23</sup> Fe atomu</li>
+        <li><b>Molekül madde:</b> tanecik = molekül → 1 mol H<sub>2</sub>O = 6,02×10<sup>23</sup> molekül</li>
+        <li><b>Tuz gibi iyonik maddeler:</b> tanecik = iyon → 1 mol NaCl içinde 6,02×10<sup>23</sup> Na<sup>+</sup> ve 6,02×10<sup>23</sup> Cl<sup>−</sup> vardır</li>
+      </ul>
+      <div class="trap">
+        <p><b>Tuzak:</b> Soru "kaç molekül" mü diyor, "kaç atom" mu? İkisi aynı değildir — 1 mol H<sub>2</sub>O molekül ama 3 mol atom içerir.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 02 AVOGADRO ================= -->
+<section class="section" id="avogadro">
+  <header class="sec-head">
+    <span class="sec-num">02</span>
+    <h2>Avogadro sayısı</h2>
+  </header>
+  <div class="formula-band mono">N<sub>A</sub> = 6,02×10<sup>23</sup> tanecik/mol</div>
+  <div class="cols-2">
+    <div class="col">
+      <p>Avogadro sayısı, maddenin cinsine değil miktarına bağlı bir sabittir: kaç taneciğe "1 mol" diyeceğini söyler. Bu yüzden birimi <code>mol<sup>−1</sup></code>'dir. Kitaplarda <b>6,02×10<sup>23</sup></b> veya daha hassas <b>6,022×10<sup>23</sup></b> yazar; hesaplamalarda ikisi de kabul edilir.</p>
+      <p>Miktar aynıysa tanecik sayısı da aynıdır — madde ne olursa olsun: 1 mol azot gazı ile 1 mol altın atomu aynı sayıda tanecik içerir ama kütleleri çok farklıdır (28 g ↔ 197 g). Bu yüzden mol'ün birimi ile kütlesi karıştırılmaz.</p>
+    </div>
+    <div class="col">
+      <div class="example">
+        <p class="ex-title">Örnek — çapraz düşünme</p>
+        <ul class="steps">
+          <li>1 mol CO<sub>2</sub> → <b>6,02×10<sup>23</sup></b> molekül</li>
+          <li>2 mol O<sub>2</sub> → 2×6,02×10<sup>23</sup> = <b>1,204×10<sup>24</sup></b> molekül</li>
+          <li>0,5 mol H<sub>2</sub>O → <b>3,01×10<sup>23</sup></b> molekül</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 03 MOLAR KÜTLE ================= -->
+<section class="section" id="molar-kutle">
+  <header class="sec-head">
+    <span class="sec-num">03</span>
+    <h2>Molar kütle (M<sub>A</sub>)</h2>
+    <p class="sec-lede">Bir maddenin 1 molünün gram cinsinden kütlesine molar kütle denir; birimi <code>g/mol</code>. Atom kütlesinde <code>akb</code> ile gram arasında sayı aynıdır — sadece birim değişir.</p>
+  </header>
+
+  <div class="cols-2">
+    <div class="col">
+      <h3>Nasıl bulunur?</h3>
+      <p><b>Element:</b> tablodaki atom kütlesi direkt mol kütlesidir — C: 12 g/mol, O: 16 g/mol, Na: 23 g/mol.</p>
+      <p><b>Bileşik:</b> formüldeki atomların kütlesini topla:</p>
+      <ul class="steps">
+        <li>H<sub>2</sub>O: 2×1 + 16 = <b>18 g/mol</b></li>
+        <li>CO<sub>2</sub>: 12 + 2×16 = <b>44 g/mol</b></li>
+        <li>H<sub>2</sub>SO<sub>4</sub>: 2×1 + 32 + 4×16 = <b>98 g/mol</b></li>
+        <li>Ca(OH)<sub>2</sub>: 40 + 2×(16+1) = <b>74 g/mol</b></li>
+      </ul>
+    </div>
+    <div class="col">
+      <h3>Ezber seviyesi tablo</h3>
+      <div class="ma-table mono" role="table" aria-label="Yaygın molar kütleler">
+        <span>H<sub>2</sub></span><span>2</span>
+        <span>O<sub>2</sub></span><span>32</span>
+        <span>N<sub>2</sub></span><span>28</span>
+        <span>CO<sub>2</sub></span><span>44</span>
+        <span>H<sub>2</sub>O</span><span>18</span>
+        <span>CH<sub>4</sub></span><span>16</span>
+        <span>NH<sub>3</sub></span><span>17</span>
+        <span>NaOH</span><span>40</span>
+        <span>HCl</span><span>36,5</span>
+        <span>NaCl</span><span>58,5</span>
+        <span>CaCO<sub>3</sub></span><span>100</span>
+      </div>
+      <div class="trap">
+        <p><b>Tuzak:</b> Soruda kütle gram verilmiş ama sen mol kütlesini <code>akb</code>'yle karıştırma. <code>akb</code> atom başına; <code>g/mol</code> mol başına. Sayı aynı, birim farklı.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="photo-note">
+    <figure>
+      <img src="assets/su-bardagi.jpg" alt="Işık yansıması içeren bir bardak su">
+      <figcaption>Foto: Adam S. Keck / Wikimedia Commons (CC BY-SA 4.0)</figcaption>
+    </figure>
+    <div class="photo-text">
+      <h3>Somutlaştıralım: bu bardak tam 1 mol</h3>
+      <p>Suyun molar kütlesi 18 g/mol. Yani terazide <b>18 gram</b> su tartarsan elinde <b>tam 1 mol su</b> — <b>6,02×10<sup>23</sup> molekül</b> — vardır. Mol, tartılabilir bir şeyin (su, demir, CO<sub>2</sub>; hangisi olursa) tanecik sayısıyla buluştuğu noktadır.</p>
+      <p>Sınavdaki sorular da bu bardağın küçük varyasyonlarından ibaret: ya kütle verir molü sorar, ya molü verir kütleyi sorar, ya da ortasından taneciğe atlar.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 04 ÜÇGEN ================= -->
+<section class="section" id="ucgen">
+  <header class="sec-head">
+    <span class="sec-num">04</span>
+    <h2>Hesap üçgeni: kütle ↔ mol ↔ tanecik</h2>
+    <p class="sec-lede">Kimyadaki her hesap bu üçlüden geçer: kütleyi tartarsın, mol sayısına çevirirsin, oradan tanecik sayısına atlarsın. Tepkime sorularında da herkes önce mol'a iner.</p>
+  </header>
+
+  <div class="triangle" aria-hidden="true">
+    <div class="tri-node tri-a"><span>Kütle</span><code>m</code><small>gram (g)</small></div>
+    <div class="tri-node tri-b"><span>Mol</span><code>n</code><small>mol</small></div>
+    <div class="tri-node tri-c"><span>Tanecik</span><code>N</code><small>adet</small></div>
+  </div>
+
+  <div class="formula-row">
+    <article class="fcard"><code>m = n × M<sub>A</sub></code><p>kütleden mollük (mollar)</p></article>
+    <article class="fcard"><code>n = m / M<sub>A</sub></code><p>kütleyi mol'a çevirmek</p></article>
+    <article class="fcard"><code>N = n × N<sub>A</sub></code><p>mol → tanecik adedi</p></article>
+    <article class="fcard"><code>k·atom = n × k × N<sub>A</sub></code><p>formülde <b>k</b> atom içeriyorsa</p></article>
+  </div>
+
+  <div class="example">
+    <p class="ex-title">Örnek 1 — 9 g su, kaç molekül / kaç atom?</p>
+    <ul class="steps">
+      <li>Molar: M<sub>A</sub>(H<sub>2</sub>O) = 18 g/mol → n = 9/18 = <b>0,5 mol</b></li>
+      <li>Molekül sayısı: N<sub>molekül</sub> = 0,5 × 6,02×10<sup>23</sup> = <b>3,01×10<sup>23</sup></b></li>
+      <li>1 molekülde 3 atom (2H + 1 O) → N<sub>atom</sub> = 0,5 × 3 × 6,02×10<sup>23</sup> = <b>9,03×10<sup>23</sup> atom</b></li>
+    </ul>
+  </div>
+
+  <div class="example">
+    <p class="ex-title">Örnek 2 — 88 g CO<sub>2</sub> içeren karbon atomu sayısı</p>
+    <ul class="steps">
+      <li>n = 88/44 = <b>2 mol</b> CO<sub>2</sub></li>
+      <li>1 CO<sub>2</sub> molekülünde 1 C atomu var → C molekül sayısıyla eşit</li>
+      <li>N<sub>C</sub> = 2 × 6,02×10<sup>23</sup> = <b>1,204×10<sup>24</sup> karbon atomu</b></li>
+    </ul>
+  </div>
+
+  <div class="trap">
+    <p><b>En klasik tuzak:</b> "1 mol O<sub>2</sub>'de kaç tane O atomu var?" → O<sub>2</sub> bir moleküldür ve molekül başına 2 atom içerir → 2 × 6,02×10<sup>23</sup> = <b>1,204×10<sup>24</sup> atom</b>. "1 mol O atomu" sorusu gelirse cevap 6,02×10<sup>23</sup> — verinin molekülden mi atomdan mı bahsettiğine bir kez daha bak.</p>
+  </div>
+</section>
+
+<!-- ================= 05 GAZLAR ================= -->
+<section class="section" id="gazlar">
+  <header class="sec-head">
+    <span class="sec-num">05</span>
+    <h2>Gazlarda mol — normal koşul hacmi</h2>
+    <p class="sec-lede">Normal koşul (NK): 0 °C sıcaklık ve 1 atm basınç. Bu şartlarda <b>her ideal gaz, cinsine bakılmaksızın, 1 mol hacmi 22,4 L</b>'dir. Bu değerin adı molar hacimdir.</p>
+  </header>
+
+  <div class="formula-band mono">V<sub>NK</sub> = n × 22,4&nbsp;&nbsp;·&nbsp;&nbsp;n = V<sub>NK</sub> / 22,4</div>
+
+  <div class="photo-note photo-note-rev">
+    <figure>
+      <img src="assets/gaz-olcum.jpg" alt="Hacim ölçeği işaretli bir gaz ölçüm (şırınga) aparatı">
+      <figcaption>Foto: Goodymeraj / Wikimedia Commons (CC0)</figcaption>
+    </figure>
+    <div class="photo-text">
+      <h3>Gazda fark: mol, hacimle de konuşur</h3>
+      <p>Dereceli şırıngada (ya da balonda) gaz hacmini işaretlerden okursun. Gazın güzelliği şu: <b>cinsine bakmaz</b> — hidrojen de karbondioksit de, aynı sayıda molekül aynı hacimde (NK'da <b>22,4 L</b>) yer kaplar. Katı ve sıvılar için bu kural geçersizdir.</p>
+      <p>Sınavda "kaç litre?" diye sorulan her soru aslında mol ↔ hacim çevirme sorusudur; bu eşitliği ezberleyen, çoğu gaz sorusunu 2 adımda bitirir.</p>
+    </div>
+  </div>
+
+  <div class="cols-2">
+    <div class="col">
+      <div class="example">
+        <p class="ex-title">Örnek 1 — kütle → hacim</p>
+        <ul class="steps">
+          <li>4,4 g CO<sub>2</sub>: n = 4,4/44 = <b>0,1 mol</b></li>
+          <li>V = 0,1 × 22,4 = <b>2,24 L</b> (NK'da)</li>
+        </ul>
+      </div>
+      <div class="example">
+        <p class="ex-title">Örnek 2 — hacim → tanecik</p>
+        <ul class="steps">
+          <li>5,6 L (NK) gaz: n = 5,6/22,4 = <b>0,25 mol</b></li>
+          <li>N = 0,25 × 6,02×10<sup>23</sup> = <b>1,505×10<sup>23</sup> molekül</b></li>
+        </ul>
+      </div>
+    </div>
+    <div class="col">
+      <div class="trap">
+        <p><b>Tuzak 1:</b> 22,4 L kuralı <b>yalnızca gazlar için geçerlidir</b>. Bir maddi örnek vermek: sıvı su ya da katı CaCO<sub>3</sub> için bu değerin kullanılmaz — sıvı/katı için yoğunluk gerekir.</p>
+        <p><b>Tuzak 2:</b> 25 °C / 1 atm'de molar hacim 24,5 L olur. Sınavda soru metni hangi sıcaklığı verirse onu kullan; <b>NK yazıyorsa 22,4</b> al.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 06 DENKLEM ================= -->
+<section class="section" id="denklem">
+  <header class="sec-head">
+    <span class="sec-num">06</span>
+    <h2>Denkleştirilmiş tepkimede mol mantığı</h2>
+    <p class="sec-lede">Kimyasal tepkime denklemlerindeki <b>katsayılar hem molekül hem mol oranıdır</b> — hangi ölçekte olursan olsun, oran aynı kalır (KİM.10.1.6).</p>
+  </header>
+
+  <div class="eq-band mono">2H<sub>2</sub>&nbsp;+&nbsp;O<sub>2</sub>&nbsp;&nbsp;→&nbsp;&nbsp;2H<sub>2</sub>O</div>
+
+  <div class="cols-3">
+    <div class="eq-col"><p class="eq-tag">Molekül düzeyi</p><p>2 molekül H<sub>2</sub> + 1 molekül O<sub>2</sub> → 2 molekül H<sub>2</sub>O</p></div>
+    <div class="eq-col"><p class="eq-tag">Mol düzeyi</p><p>2 mol H<sub>2</sub> + 1 mol O<sub>2</sub> → 2 mol H<sub>2</sub>O (oran aynı: 2 : 1 : 2)</p></div>
+    <div class="eq-col eq-col-hl"><p class="eq-tag">Kütle düzeyi · korunur</p><p>4 g + 32 g = 36 g → 36 g H<sub>2</sub>O. Kütle her zaman korunur.</p></div>
+  </div>
+
+  <div class="trap">
+    <p><b>Mol toplamı korunmak zorunda DEĞİL.</b> Yukarıdaki tepkimede 3 mol gaz → 2 mol gaz; kütle korunur ama mol toplamı değişebilir. "Mol korunmuştur" cümlesi duyduğunda tetiklen: tanecik türü değişir, mol toplamı da değişebilir.</p>
+  </div>
+
+  <div class="example">
+    <p class="ex-title">Örnek — oran çıkarma</p>
+    <p class="mono eq-mini">N<sub>2</sub> + 3H<sub>2</sub> → 2NH<sub>3</sub></p>
+    <ul class="steps">
+      <li>H<sub>2</sub> : NH<sub>3</sub> oranını katsayılardan çıkar: 3 : 2</li>
+      <li>6 mol H<sub>2</sub> verildi → NH<sub>3</sub> = 6 × (2/3) = <b>4 mol NH<sub>3</sub></b></li>
+      <li>Kütle olarak: 4 mol NH<sub>3</sub> = 4 × 17 = <b>68 g</b></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= 07 STOKIYOMETRİ ================= -->
+<section class="section" id="stokiyometri">
+  <header class="sec-head">
+    <span class="sec-num">07</span>
+    <h2>Stokiyometri — tepkimede miktar hesabı</h2>
+    <p class="sec-lede">KİM.10.1.7: Kütle veriliyor, istenen başka maddenin kütlesi/hacmi/tanecik sayısı. Rota hep aynı: <b>verileni mol'a çevir → katsayı oranıyla diğer maddenin mollükünü bul → isteneni gram/litre/tanecik'e geri çevir.</b></p>
+  </header>
+
+  <div class="route-band mono">kütle →(÷M<sub>A</sub>)→ mol →(×katsayı oranı)→ mol →(×M<sub>A</sub> / ×22,4 / ×N<sub>A</sub>)→ istenen</div>
+
+  <div class="example">
+    <p class="ex-title">Örnek 1 — klasik rota</p>
+    <p class="mono eq-mini">2H<sub>2</sub> + O<sub>2</sub> → 2H<sub>2</sub>O &nbsp;·&nbsp; 3 g H<sub>2</sub> tam tepkime; üretilen su kaç gram?</p>
+    <ul class="steps">
+      <li>H<sub>2</sub> molü: n = 3/2 = <b>1,5 mol</b></li>
+      <li>Katsayı oranı H<sub>2</sub> : H<sub>2</sub>O = 2 : 2 → H<sub>2</sub>O molü = <b>1,5 mol</b></li>
+      <li>Kütle: m = 1,5 × 18 = <b>27 g su</b></li>
+    </ul>
+  </div>
+
+  <div class="example">
+    <p class="ex-title">Örnek 2 — yanma, hacim isteniyor (NK)</p>
+    <p class="mono eq-mini">CH<sub>4</sub> + 2O<sub>2</sub> → CO<sub>2</sub> + 2H<sub>2</sub>O &nbsp;·&nbsp; 16 g CH<sub>4</sub>; kaç L CO<sub>2</sub> (NK)?</p>
+    <ul class="steps">
+      <li>n(CH<sub>4</sub>) = 16/16 = <b>1 mol</b></li>
+      <li>Oran CH<sub>4</sub> : CO<sub>2</sub> = 1 : 1 → CO<sub>2</sub> = <b>1 mol</b></li>
+      <li>V = 1 × 22,4 = <b>22,4 L CO<sub>2</sub></b></li>
+    </ul>
+  </div>
+
+  <div class="cols-2">
+    <div class="col example">
+      <p class="ex-title">Örnek 3 — sınırlayıcı bileşen</p>
+      <p class="mono eq-mini">2H<sub>2</sub> + O<sub>2</sub> → 2H<sub>2</sub>O &nbsp;·&nbsp; 8 g H<sub>2</sub> + 48 g O<sub>2</sub></p>
+      <ul class="steps">
+        <li>n(H<sub>2</sub>) = 8/2 = 4 mol; n(O<sub>2</sub>) = 48/32 = <b>1,5 mol</b></li>
+        <li>4 mol H<sub>2</sub> için 2 mol O<sub>2</sub> lazım ama sadece 1,5 var → <b>O<sub>2</sub> sınırlayıcı</b></li>
+        <li>Ürün: H<sub>2</sub>O = 1,5 × 2 = 3 mol → m = 3 × 18 = <b>54 g su</b></li>
+      </ul>
+    </div>
+    <div class="col example">
+      <p class="ex-title">Örnek 4 — % verim</p>
+      <ul class="steps">
+        <li>Teorik ürün 27 g su; tepkime sonunda tartılan <b>21,6 g</b></li>
+        <li>Verim = 21,6/27 × 100 = <b>%80</b></li>
+        <li>Not: "verim" sorularında önce sınırlayıcıdan teorik miktarı bul, sonra yüzdeyle karşılaştır.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 08 KARIŞIM ================= -->
+<section class="section" id="karisim">
+  <header class="sec-head">
+    <span class="sec-num">08</span>
+    <h2>Karışımlarda mol hesabı</h2>
+    <p class="sec-lede">Sınav klasiği: iki maddeden oluşan karışımın <b>mol sayısı ve kütlesi</b> verilir, mol yüzdeleri sorulur. Yöntem: bir maddeye <code>x</code> mol de; diğeri otomatik <code>(toplam − x)</code> mol olur; kütle toplamı eşitliğe bağla.</p>
+  </header>
+
+  <div class="example">
+    <p class="ex-title">Örnek — H<sub>2</sub> ve CH<sub>4</sub> karışımı</p>
+    <p class="mono eq-mini">Mol toplamı 0,5 mol; kütle toplamı 2,4 g. Karışımdaki CH<sub>4</sub> mol yüzdesi?</p>
+    <ul class="steps">
+      <li>CH<sub>4</sub> = x mol olsun → H<sub>2</sub> = (0,5 − x) mol</li>
+      <li>Kütle: 2(0,5 − x) + 16x = 2,4</li>
+      <li>Aç: 1 − 2x + 16x = 2,4 → 14x = 1,4 → <b>x = 0,1 mol CH<sub>4</sub></b></li>
+      <li>Kontrol: 0,4 mol H<sub>2</sub> (0,8 g) + 0,1 mol CH<sub>4</sub> (1,6 g) = 2,4 g ✓</li>
+      <li>Mol yüzdesi: 0,1/0,5 = <b>%20 CH<sub>4</sub>, %80 H<sub>2</sub></b></li>
+    </ul>
+  </div>
+
+  <div class="trap">
+    <p><b>Tuzak:</b> Mol yüzdesi ≠ kütle yüzdesi. Yukarıdaki karışımda CH<sub>4</sub> molce %20 ama kütlece %67 (1,6/2,4). Sorunun hangi yüzdeyi istediğini iki kez oku.</p>
+  </div>
+</section>
+
+<!-- ================= 09 MOLARİTE ================= -->
+<section class="section" id="molarite">
+  <header class="sec-head">
+    <span class="sec-num">09</span>
+    <h2>Çözeltilerde mol — molarite (kısa not)</h2>
+    <p class="sec-lede">Molarite, 1 litre çözelti içindeki mol sayısıdır; mol konusuyla aynı mimariyi çalıştırır.</p>
+  </header>
+  <div class="formula-band mono">M = n / V(L) &nbsp;·&nbsp; n = M × V</div>
+  <div class="cols-2">
+    <div class="col">
+      <div class="example">
+        <p class="ex-title">Örnek</p>
+        <ul class="steps">
+          <li>4 g NaOH (M<sub>A</sub> = 40) → n = 0,1 mol</li>
+          <li>V = 250 mL = 0,25 L (litreye çevirmeyi unutma!)</li>
+          <li>M = 0,1 / 0,25 = <b>0,4 M</b></li>
+        </ul>
+      </div>
+    </div>
+    <div class="col">
+      <div class="trap">
+        <p><b>Tuzak:</b> Hacim her zaman <b>litre</b>. Soruda mL geliyorsa ÷1000 yap. Bir de: molarite, çözünmenin sonucunda <b>çözelti</b> hacmine bakar — saf çözücü hacmine değil.</p>
+        <p class="mini-note">Derişim konusunun asıl merkezi 10. sınıf 2. teması "Çeşitlilik"te (2. dönem). Burada sadece mol-bağlı temel hesap gerekiyor — sınavında molarite küçük bir mini soru olarak düşebilir.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 10 FORMÜLLER ================= -->
+<section class="section" id="formuller">
+  <header class="sec-head">
+    <span class="sec-num">10</span>
+    <h2>Formül özeti — sınav öncesi 60 saniye</h2>
+  </header>
+  <div class="formula-row">
+    <article class="fcard"><code>m = n × M<sub>A</sub></code><p>kütle ↔ mol (gram)</p></article>
+    <article class="fcard"><code>N = n × N<sub>A</sub></code><p>mol ↔ tanecik</p></article>
+    <article class="fcard"><code>atom = n·k·N<sub>A</sub></code><p>formülde k atom varsa</p></article>
+    <article class="fcard"><code>V = n × 22,4</code><p>gaz hacmi (NK)</p></article>
+    <article class="fcard"><code>M = n / V(L)</code><p>molarite (mol/L)</p></article>
+    <article class="fcard"><code>%verim = elde / teorik ×100</code></article>
+  </div>
+  <div class="sabit-row">
+    <span class="sabit"><code>n</code> mol (madde miktarı)</span>
+    <span class="sabit"><code>N<sub>A</sub></code> = 6,02×10<sup>23</sup> mol<sup>−1</sup></span>
+    <span class="sabit"><code>V<sub>m</sub></code> = 22,4 L/mol (NK)</span>
+    <span class="sabit"><code>1 L = 1 dm<sup>3</sup></code></span>
+  </div>
+</section>
+
+<!-- ================= 11 HESAPLAYICI ================= -->
+<section class="section" id="hesaplayici">
+  <header class="sec-head">
+    <span class="sec-num">11</span>
+    <h2>İnteraktif mol hesaplayıcı</h2>
+    <p class="sec-lede">Dört mod arasında geçiş yap; sonuçlar anında, bilimsel gösterimle. Kendi örneklerini de kontrol edebilirsin.</p>
+  </header>
+
+  <div class="calc" id="calc">
+    <div class="calc-tabs" role="tablist">
+      <button class="calc-tab is-active" data-mode="kutle" type="button">Kütle ↔ Mol</button>
+      <button class="calc-tab" data-mode="tanecik" type="button">Mol ↔ Tanecik</button>
+      <button class="calc-tab" data-mode="hacim" type="button">Gaz Hacmi ↔ Mol</button>
+      <button class="calc-tab" data-mode="molarite" type="button">Molarite</button>
+    </div>
+
+    <div class="calc-body">
+      <!-- mod 1: kütle/mol -->
+      <div class="calc-pane is-active" data-pane="kutle">
+        <div class="calc-row">
+          <label>Kütle <span>g</span><input id="cIn_g" type="number" step="any" min="0" placeholder="örn. 9"></label>
+          <label>Molar kütle <span>g/mol</span>
+            <input id="cIn_ma" type="number" step="any" min="0" placeholder="örn. 18">
+            <select id="cIn_maPick" aria-label="Hızlı molar kütle seç">
+              <option value="">— hızlı seç —</option>
+              <option value="2">H₂ · 2</option><option value="32">O₂ · 32</option>
+              <option value="28">N₂ · 28</option><option value="44">CO₂ · 44</option>
+              <option value="18">H₂O · 18</option><option value="16">CH₄ · 16</option>
+              <option value="17">NH₃ · 17</option><option value="40">NaOH · 40</option>
+              <option value="36.5">HCl · 36,5</option><option value="58.5">NaCl · 58,5</option>
+            </select>
+          </label>
+        </div>
+        <button class="calc-go" data-go="kutle" type="button">Hesapla →</button>
+        <p class="calc-out" id="cOut_kutle" aria-live="polite"></p>
+      </div>
+
+      <!-- mod 2: mol/tanecik -->
+      <div class="calc-pane" data-pane="tanecik">
+        <div class="calc-row">
+          <label>Mol sayısı <span>mol</span><input id="cIn_n" type="number" step="any" min="0" placeholder="örn. 0,5 → 0.5"></label>
+          <label>Tanecik türü<span></span>
+            <select id="cIn_tur"><option value="molekül">molekül</option><option value="atom">atom</option><option value="iyon">iyon</option></select>
+          </label>
+        </div>
+        <button class="calc-go" data-go="tanecik" type="button">Hesapla →</button>
+        <p class="calc-out" id="cOut_tanecik" aria-live="polite"></p>
+      </div>
+
+      <!-- mod 3: hacim/mol -->
+      <div class="calc-pane" data-pane="hacim">
+        <div class="calc-row">
+          <label>Gaz hacmi (NK) <span>L</span><input id="cIn_v" type="number" step="any" min="0" placeholder="örn. 11.2"></label>
+          <label>veya mol <span>mol</span><input id="cIn_n2" type="number" step="any" min="0" placeholder="örn. 0.5"></label>
+        </div>
+        <button class="calc-go" data-go="hacim" type="button">Hesapla →</button>
+        <p class="calc-out" id="cOut_hacim" aria-live="polite"></p>
+      </div>
+
+      <!-- mod 4: molarite -->
+      <div class="calc-pane" data-pane="molarite">
+        <div class="calc-row">
+          <label>Mol <span>mol</span><input id="cIn_n3" type="number" step="any" min="0" placeholder="örn. 0.1"></label>
+          <label>Hacim <span>L</span><input id="cIn_v2" type="number" step="any" min="0" placeholder="örn. 0.25"></label>
+        </div>
+        <button class="calc-go" data-go="molarite" type="button">Hesapla →</button>
+        <p class="calc-out" id="cOut_molarite" aria-live="polite"></p>
+      </div>
+    </div>
+    <p class="calc-hint">Bilimsel gösterimde <code>1,204×10<sup>24</sup></code> gibi Türkçe virgül kullanılır. NK şartı: 0 °C, 1 atm → 22,4 L/mol.</p>
+  </div>
+</section>
+
+<!-- ================= 12 TEST ================= -->
+<section class="section" id="test">
+  <header class="sec-head">
+    <span class="sec-num">12</span>
+    <h2>Sınav tipli test — 13 soru</h2>
+    <p class="sec-lede">Her soruda şık seçtiğin an cevap kilitlenir, çözüm adımları açılır. Sonunda skorun ve tekrar başlat çıktı.</p>
+  </header>
+  <div class="quiz" id="quiz">
+    <div class="quiz-top" id="quizTop" hidden>
+      <div class="quiz-prog"><span id="quizProgFill"></span></div>
+      <p class="quiz-meta"><span id="quizPos">1</span> / 13 &nbsp;·&nbsp; Doğru: <span id="quizScore">0</span></p>
+    </div>
+    <div class="quiz-card" id="quizCard" aria-live="polite"></div>
+    <div class="quiz-start" id="quizStart">
+      <p class="quiz-start-t">Kendini ölçmeye hazır mısın?</p>
+      <p class="quiz-start-d">13 soru — tanım, üçgen, gaz, denklem, karışım. Sınavda çıkandan aşağı yukarı aynı tarzda.</p>
+      <button class="btn btn-solid" id="quizStartBtn" type="button">Testi başlat</button>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 13 HATALAR ================= -->
+<section class="section" id="hatalar">
+  <header class="sec-head">
+    <span class="sec-num">13</span>
+    <h2>Sık yapılan hatalar ve sınav taktikleri</h2>
+  </header>
+  <div class="mist-row">
+    <article class="mist"><p class="mist-n">01</p><p><b>"1 mol = 6,02×10<sup>23</sup> gram" sanmak.</b> Mol tanecik sayısı birimi; gram ile molar kütle üzerinden gidilir.</p></article>
+    <article class="mist"><p class="mist-n">02</p><p><b>Tanecik türünü karıştırmak.</b> 1 mol O<sub>2</sub> molekül 6,02×10<sup>23</sup>; içindeki O atomu ise 1,204×10<sup>24</sup>.</p></article>
+    <article class="mist"><p class="mist-n">03</p><p><b>mL'yi litre sanmak.</b> Molaritede V mutlaka litre: 250 mL = 0,25 L.</p></article>
+    <article class="mist"><p class="mist-n">04</p><p><b>Denkleştirilmemiş tepkimeden oran kullanmak.</b> Önce denkleştir: katsayılar mol oranıdır.</p></article>
+    <article class="mist"><p class="mist-n">05</p><p><b>Kütle-to-tanecik atlayışı.</b> Kütle ile tanecik arasında mol köprüsü vardır: önce mol'a in, sonra N<sub>A</sub> ile çarp.</p></article>
+    <article class="mist"><p class="mist-n">06</p><p><b>NK koşulsuz 22,4 kullanmak.</b> "NK / 0 °C / 1 atm" yazmıyorsa 22,4 çevirmek yanlış olabilir — metnin şartını kontrol et.</p></article>
+  </div>
+  <div class="tips">
+    <h3>Sınav taktikleri</h3>
+    <ul class="tick-list">
+      <li><b>Birim yaz:</b> her satırda mol/g/L birimi dursun; birim çıkarmak hatanın %80'ini önceden yakalar.</li>
+      <li><b>Karışım sorusunda x kur:</b> "x madde A, toplam−x madde B" şablonu bütün mol yüzdesi sorularını çözer.</li>
+      <li><b>Molar kütlesi tabloyu ezberle:</b> H₂ 2 · O₂ 32 · N₂ 28 · CO₂ 44 · H₂O 18 · CH₄ 16 · NaOH 40 · CaCO₃ 100.</li>
+      <li><b>Mantık kontrolü yap:</b> 9 g su 0,5 mol olmalı (18 g = 1 mol). Sonucun balonu şişmişse katsayıda hata var demektir.</li>
+      <li><b>Tuzluk sorularda sıralı ilerle:</b> kütle → mol → katsayı oranı → ürün molü → istenen birim.</li>
+    </ul>
+  </div>
+</section>
+
+<footer class="footer">
+  <p><b>Mol Kampı</b> · 10. sınıf kimya · 2026–2027 Maarif Modeli (MEB). İçerik KİM.10.1.4–KİM.10.1.7 kazanımlarına göre hazırlandı; kavram tanımları MEB öğretim programı metnine ve güncel konu kaynaklarına dayanır.</p>
+</footer>
+
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
